@@ -1,7 +1,8 @@
-mapboxgl.accessToken = 'pk.eyJ1Ijoic2thZmVlIiwiYSI6ImNtNGVuaDB2cjBzam0ya3FxazMwb3FvanoifQ.brUTsL1rWCx4Kekeg1Ncsw';
-
 import { getGlobalBounds, getSensors, getBounds } from "./sensor.js";
 import {centerCoordinates} from "./constant.js"
+import { APIKey } from "./secret.js";
+
+mapboxgl.accessToken = APIKey;
 
 function findCenter(point1, point2) {
     var newCoords = []
