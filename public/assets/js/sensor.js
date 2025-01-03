@@ -39,7 +39,7 @@ export function getGlobalBounds(sensors) {
 var sensors = []
 function generateSensors() {
     for (var i = -nbLine / 2; i < nbLine / 2; i++) {
-        for (var j = -nbCol / 2; j < nbCol / 2; j++) {
+        for (var j = -nbCol / 2+1; j <= nbCol / 2; j++) {
             // ajuster les coordonnées calculées pour gérer la superposition de moitier
             // var ajustJ = (gridSize/2)*(j+nbCol/2) - (gridSize*(nbCol/4+0.25))
             // var ajustJ = gridSize*(0.5*j-0.25)
@@ -65,7 +65,7 @@ function generateSensors() {
             var centerLat = (centerCoordinates[1] - gridSize / 2) + i * gridSize - adjustI + gridSize / 2;
 
             // pour trouver l'id lié à la coordonné inversé de la génération
-            var id = ((-i + nbLine * 1.5 + 1) % (nbLine + 1) - 1) * nbCol + (j + nbCol * 1.5 + 1) % (nbCol + 1) + 1
+            var id = ((-i + nbLine * 1.5 + 1) % (nbLine + 1) - 1) * nbCol + (j + nbCol * 1.5) % (nbCol + 1) + 1
             sensors.push(
                 {
                     'id': id,
@@ -88,6 +88,7 @@ function generateSensors() {
 }
 
 export function getSensors() {
+    console.log(sensors)
     return sensors
 }
 
