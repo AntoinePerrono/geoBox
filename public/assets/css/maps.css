@@ -36,8 +36,9 @@ a {
 
 #simu {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 2em;
     width: 80%;
     margin: 1em;
     margin-left: auto;
@@ -83,18 +84,21 @@ a {
     border-radius: 5px;
     margin: 20px;
 }
-.log-debug {
+
+#log-panel {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     gap: 1em;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
-    width: 80%;
-    padding: 20px;
+    width: 25%;
     background-color: #fff;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
+}
+
+#log-header {
     margin: 20px;
 }
 
