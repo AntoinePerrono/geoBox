@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoBox</title>
+    <link rel="icon" type="image/png" href="/public/assets/img/logo.png" />
+    <link rel="stylesheet" href="/public/assets/css/maps.css"/>
+    <script type="module" src="/public/assets/js/main.js" defer></script>
+    
+    <!-- Inclure la bibliothèque Mapbox GL JS -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.8.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.8.0/mapbox-gl.js"></script>
+</head>
+<body>
+    <div id="header"></div>
+    <div class="panel">
+        <div class="form-map">
+            <div class="flex-row">
+                <p>Map configuration</p>
+            </div>
+            <div class="flex-row">
+                <div class="form-group">
+                    <label for="nbCol">Columns:</label>
+                    <input type="number" id="nbCol" name="nbCol" min="5" max="15" value="10" disabled>
+                </div>
+                
+                <div class="form-group">
+                    <label for="nbRow">Rows:</label>
+                    <input type="number" id="nbRow" name="nbRow" min="5" max="15" value="6" disabled>
+                </div>
+                
+                <div class="form-group">
+                    <label for="size">Resolution:</label>
+                    <select name="vitesse" id="vitesse" disabled>
+                        <option value="1000">Small</option>
+                        <option value="2000" selected >Medium</option>
+                        <option value="3000">Large</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="flex-row">
+                <button type="button" id="refresh-map-button" disabled>Refresh</button>
+            </div>
+        </div>
+        <div class="debug-panel">
+            <div class="flex-row">
+                <p>Debug panel</p>
+            </div>
+            
+            <div class="flex-row">
+                <button type="button" id="debug-on-simu-button">Debug</button>
+                <button type="button" id="debug-off-simu-button" style="display: none;">Debug</button>
+                <button type="button" id="stop-interval-button" >StopInterval</button>
+            </div>
+        </div>
+    </div>
+    <div id="simu">
+        <div id="map_container">
+            <div id="map"></div>    
+        </div>
+        <div class="log-debug">
+            <h3>Log:</h3>
+        </div>
+    </div>   
+</body>
